@@ -8,8 +8,9 @@ public class LinkedQueue<T> implements QueueInterface<T> {
 
     @Override
     public QueueInterface<T> enqueue(T elem) {
-        // TODO Auto-generated method stub
-        return null;
+		this.last.next = new QNode<T>(elem);
+		this.last = last.next;
+        return this;
     }
 
     @Override
@@ -32,8 +33,7 @@ public class LinkedQueue<T> implements QueueInterface<T> {
 
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        return 0;
+        return count;
     }
 
     @Override
